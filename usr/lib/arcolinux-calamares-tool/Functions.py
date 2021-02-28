@@ -28,7 +28,7 @@ fs = [
     'ext4',
 ]
 
-message = "Sorry, This tool is only for the live ISO to make changes to Calamares Installer"  # noqa
+message = "The ArcoLinux Calamares tool is only for the live ISO"  # noqa
 
 
 def __get_position(lists, string):
