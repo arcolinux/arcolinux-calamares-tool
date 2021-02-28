@@ -14,13 +14,22 @@ def GUI(self, Gtk, GdkPixbuf, fn):
     hbox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox3 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-    # hbox4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+    hbox4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox5 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox6 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox7 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox8 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
     # vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+
+    # ======================================================================
+    #                           LOGO
+    # ======================================================================
+
+    img_pb = GdkPixbuf.Pixbuf().new_from_file_at_size(fn.os.path.join(str(fn.Path(__file__).parent), 'images/arcolinux-one-liner.png'), 235, 235)
+    img = Gtk.Image().new_from_pixbuf(img_pb)
+    hbox4.pack_start(img, True, False, 0)
+
     # ======================================================================
     #                           BOX 1
     # ======================================================================
@@ -60,9 +69,10 @@ def GUI(self, Gtk, GdkPixbuf, fn):
     #                   PACK TO WINDOW
     # ======================================================================
 
+    self.vbox.pack_start(hbox4, False, False, 20)  # LOGO
     self.vbox.pack_start(hbox1, False, False, 0)  # Options
     if not fn.users.strip() == fn.liveuser.strip():
-        self.vbox.pack_start(hbox3, True, True, 7)  # Message
+        self.vbox.pack_start(hbox3, True, True, 20)  # Message
         btnCancel.set_sensitive(False)
         btnOK.set_sensitive(False)
         self.fileSystem.set_sensitive(False)

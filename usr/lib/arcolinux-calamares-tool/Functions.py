@@ -5,9 +5,11 @@
 import os
 import threading  # noqa
 import subprocess
+from pathlib import Path
 
 base_dir = os.path.dirname(os.path.realpath(__file__))
-
+working_dir = ''.join([str(Path(__file__).parents[2]),
+                       "/share/hefftor-welcome-app/"])
 proc = subprocess.Popen(["who"], stdout=subprocess.PIPE, shell=True, executable='/bin/bash') # noqa
 users = proc.stdout.readlines()[0].decode().strip().split(" ")[0]
 print(users)
