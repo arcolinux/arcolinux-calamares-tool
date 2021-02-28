@@ -26,7 +26,7 @@ def GUI(self, Gtk, GdkPixbuf, fn):
     #                           LOGO
     # ======================================================================
 
-    img_pb = GdkPixbuf.Pixbuf().new_from_file_at_size(fn.os.path.join(str(fn.Path(__file__).parent), 'images/arcolinux-one-liner.png'), 235, 235)
+    img_pb = GdkPixbuf.Pixbuf().new_from_file_at_size(fn.os.path.join(str(fn.Path(__file__).parent), 'images/arcolinux-one-liner.png'), 235, 235)  # noqa
     img = Gtk.Image().new_from_pixbuf(img_pb)
     hbox4.pack_start(img, True, False, 0)
 
