@@ -16,9 +16,10 @@ else:
 
 fs = [
     'btrfs',
+    'xfs',
+    'jfs',
+    'reiser',
     'ext4',
-    'f2fs',
-    'jfs'
 ]
 
 
