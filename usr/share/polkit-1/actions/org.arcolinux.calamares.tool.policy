@@ -4,7 +4,7 @@
   <vendor>ArcoLinux</vendor>
   <vendor_url>https://arcolinux.info/</vendor_url>
   <icon_name>package-x-generic</icon_name>
-  <action id="org.acrcolinux.pkexec.calamares-tool">
+  <action id="org.arcolinux.pkexec.calamares-tool">
     <description>Change calamares data</description>
     <message>Authentication is required to change your own user data</message>
     <defaults>

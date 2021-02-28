@@ -22,9 +22,10 @@ else:
 
 fs = [
     'btrfs',
+    'xfs',
+    'jfs',
+    'reiser',
     'ext4',
-    'f2fs',
-    'jfs'
 ]
 
 message = "Sorry, This tool is only for the live ISO to make changes to Calamares Installer"  # noqa

@@ -25,7 +25,7 @@ def GUI(self, Gtk, GdkPixbuf, fn):
     #                           BOX 1
     # ======================================================================
 
-    lbl1 = Gtk.Label(label="Select your proferred filesystem: ")
+    lbl1 = Gtk.Label(label="Select your preferred filesystem: ")
     self.fileSystem = Gtk.ComboBoxText()
     self.fileSystem.set_size_request(280, 0)
 
