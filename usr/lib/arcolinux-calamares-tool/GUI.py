@@ -13,13 +13,14 @@ def GUI(self, Gtk, GdkPixbuf, fn):
 
     hbox1 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     hbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-    # hbox3 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+    hbox3 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox4 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox5 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox6 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox7 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
     # hbox8 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
 
+    # vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
     # ======================================================================
     #                           BOX 1
     # ======================================================================
@@ -47,8 +48,22 @@ def GUI(self, Gtk, GdkPixbuf, fn):
     hbox2.pack_end(btnOK, False, False, 0)
 
     # ======================================================================
+    #                       MESSAGE
+    # ======================================================================
+    lblmessage = Gtk.Label()
+    lblmessage.set_justify(Gtk.Justification.CENTER)
+    lblmessage.set_line_wrap(True)
+    lblmessage.set_markup("<span foreground=\"orange\" size=\"xx-large\">" + fn.message + "</span>")  # noqa
+
+    hbox3.pack_start(lblmessage, True, False, 0)
+    # ======================================================================
     #                   PACK TO WINDOW
     # ======================================================================
 
     self.vbox.pack_start(hbox1, False, False, 0)  # Options
+    if not fn.users.strip() == fn.liveuser.strip():
+        self.vbox.pack_start(hbox3, True, True, 7)  # Message
+        btnCancel.set_sensitive(False)
+        btnOK.set_sensitive(False)
+        self.fileSystem.set_sensitive(False)
     self.vbox.pack_end(hbox2, False, False, 7)  # Buttons
