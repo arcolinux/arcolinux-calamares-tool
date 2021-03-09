@@ -61,7 +61,7 @@ def set_awa(string):
 
     pos = __get_position(lines, '                             args=(["env", "pkexec", "/usr/bin/calamares", "--style", "fusion"')
 
-    lines[pos] = '                             args=(["env", "pkexec", "/usr/bin/calamares", "--style", "fusion"' + string + "\"\n"
+    lines[pos] = '                             args=(["env", "pkexec", "/usr/bin/calamares", "--style", "fusion"' + string + "\n"
 
     with open(awa, "w") as f:
         f.writelines(lines)
@@ -73,7 +73,7 @@ def on_debugswitch_toggled(self, switch):
         #show_in_app_notification(self,
         #                            "Calamares debugging is on")
         d = threading.Thread(target=set_awa,
-                                args=(', "-d" ],))"',))
+                                args=(', "-d" ],))',))
         d.daemon = True
         d.start()
     else:
@@ -81,7 +81,7 @@ def on_debugswitch_toggled(self, switch):
         #show_in_app_notification(self,
         #                            "Calamares debugging is off")
         d = threading.Thread(target=set_awa,
-                                args=(' ],))"',))
+                                args=(' ],))',))
         d.daemon = True
         d.start()
 
